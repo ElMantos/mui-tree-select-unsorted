@@ -480,7 +480,8 @@ export const useTreeSelect = ({
             }
             const leafOption = leafOptionsMap.get(node);
             if (leafOption) {
-              filteredOptions[1].push(leafOption);
+              // setting to push to index 0 to prevent sorting;
+              filteredOptions[0].push(leafOption);
             }
             return filteredOptions;
           },
@@ -489,6 +490,7 @@ export const useTreeSelect = ({
         // Sort branch options to top
         return [...branchOptions, ...leafOptions];
       })();
+      console.log({ filteredOptions });
       noOptions.current = !filteredOptions.length && !freeSoloOptions.length;
       return upBranch === null
         ? [...filteredOptions, ...freeSoloOptions]

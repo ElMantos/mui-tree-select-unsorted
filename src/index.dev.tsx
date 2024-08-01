@@ -82,7 +82,9 @@ class Node {
   }
 
   isBranch() {
-    return "states" in this.value || "cities" in this.value;
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    // @ts-ignore
+    return this.value?.states?.length || this.value?.cities?.length;
   }
 
   isEqual(to: Node) {
@@ -173,8 +175,7 @@ const Sample: React.FC = () => {
         justifyContent: "center",
         mt: 8,
         height: 2000,
-      }}
-    >
+      }}>
       <div style={{ width: 450 }}>
         {/* <Typography
           sx={{
@@ -190,8 +191,7 @@ const Sample: React.FC = () => {
           fullWidth
           sx={{
             mb: 2,
-          }}
-        >
+          }}>
           <FormControlLabel
             sx={{ m: 1 }}
             control={
