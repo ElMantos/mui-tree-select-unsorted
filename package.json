@@ -20,7 +20,7 @@
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "npm run build:dist && npm run build:docs && npm run build:example",
-    "build:dist": "rm -Rf ./dist && mkdir -p ./dist && tsc -p ./tsconfig.prod.json && prettier --write ./dist",
+    "build:dist": "tsc -p ./tsconfig.prod.json && prettier --write ./dist",
     "build:docs": "mkdir -p ./docs && typedoc --options typedoc.json ",
     "build:example": "rm -Rf ./example && mkdir -p ./example  && node ./scripts/buildExample.js && prettier --write ./example",
     "build:sample-data": "node scripts/genSampleData.js",

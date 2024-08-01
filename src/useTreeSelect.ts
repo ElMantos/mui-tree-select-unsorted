@@ -510,7 +510,7 @@ export const useTreeSelect = <
               : options;
           })()) as InternalOption<Node, FreeSolo, NodeType>[])
         );
-
+        return options;
         // return options.sort(({ type: a }, { type: b }) => {
         //   if (a === b) {
         //     return 0;
