@@ -511,20 +511,20 @@ export const useTreeSelect = <
           })()) as InternalOption<Node, FreeSolo, NodeType>[])
         );
 
-        return options.sort(({ type: a }, { type: b }) => {
-          if (a === b) {
-            return 0;
-          } else if (a === NodeType.UP_BRANCH) {
-            return -1;
-          } else if (b === NodeType.UP_BRANCH) {
-            return 1;
-          } else if (a === NodeType.DOWN_BRANCH) {
-            return -1;
-          } else if (b === NodeType.DOWN_BRANCH) {
-            return 1;
-          }
-          return 0; // This should never happen.
-        });
+        // return options.sort(({ type: a }, { type: b }) => {
+        //   if (a === b) {
+        //     return 0;
+        //   } else if (a === NodeType.UP_BRANCH) {
+        //     return -1;
+        //   } else if (b === NodeType.UP_BRANCH) {
+        //     return 1;
+        //   } else if (a === NodeType.DOWN_BRANCH) {
+        //     return -1;
+        //   } else if (b === NodeType.DOWN_BRANCH) {
+        //     return 1;
+        //   }
+        //   return 0; // This should never happen.
+        // });
       }
 
       return asyncOrAsyncBlock(getOpts());
