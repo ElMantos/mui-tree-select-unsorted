@@ -860,7 +860,6 @@ export const useTreeSelect = <
         // Sort branch options to top
         return [...branchOptions, ...leafOptions];
       })();
-      console.log({ filteredOptions });
 
       noOptions.current = !filteredOptions.length && !freeSoloOptions.length;
 

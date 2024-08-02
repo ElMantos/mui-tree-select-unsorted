@@ -217,7 +217,6 @@ export const useTreeSelect = ({
               : options;
           })())
         );
-        console.log({ options });
         return options;
         // return options.sort(({ type: a }, { type: b }) => {
         //   if (a === b) {
@@ -490,7 +489,6 @@ export const useTreeSelect = ({
         // Sort branch options to top
         return [...branchOptions, ...leafOptions];
       })();
-      console.log({ filteredOptions });
       noOptions.current = !filteredOptions.length && !freeSoloOptions.length;
       return upBranch === null
         ? [...filteredOptions, ...freeSoloOptions]
